@@ -1,0 +1,148 @@
+body {
+  background-color: #0b131e;
+  color: white;
+  font-family: Arial, serif;
+  padding: 30px;
+}
+
+p {
+  margin: 0;
+}
+
+::placeholder {
+  color: white;
+}
+
+.cityInput {
+  width: 80%;
+  height: 25px;
+  margin: auto;
+  display: block;
+  border: none;
+  padding: 20px;
+  font-size: 30px;
+  border-radius: 10px;
+  background-color: #202b3b;
+  color: #ffffff;
+}
+
+.city-temp-dev {
+  padding-left: 200px;
+  display: inline-block;
+}
+
+.weather-description-dev {
+  display: inline;
+}
+
+.cityName {
+  font-size: 50px;
+  margin-left: 200px;
+  font-weight: bold;
+}
+
+.temp {
+  margin-left: 200px;
+  font-size: 50px;
+  margin-top: 70px;
+  font-weight: bold;
+}
+
+.weather-description {
+  max-width: 200px;
+  margin-left: 500px;
+  margin-top: 50px;
+}
+
+.air-conditions {
+  background-color: #202b3b;
+  width: 80%;
+  padding: 30px;
+  margin: 100px auto auto;
+  border-radius: 20px;
+}
+
+.air-conditions-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.label-air-conditions {
+  color: #bbbec0;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.div-air-conditions-icon {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.div-air-conditions-data {
+  display: inline-block;
+}
+
+.div-air-conditions-info {
+  margin-top: 40px;
+}
+
+.div-air-conditions-info-2 {
+  margin-left: 200px;
+  margin-top: 40px;
+}
+
+.air-conditions-title {
+  color: #bbbec0;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.air-conditions-description {
+  color: #bbbec0;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .cityInput {
+    width: 100%;
+  }
+
+  .city-temp-dev,
+  .weather-description-dev,
+  .air-conditions {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .cityName,
+  .temp {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .weather-description {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .air-conditions,
+  .div-air-conditions-info-2 {
+    width: 100%;
+    margin: 20px auto;
+  }
+
+  .div-air-conditions-info-2 {
+    margin-left: 0;
+  }
+
+  .air-conditions-grid {
+    grid-template-columns: 100%;
+  }
+
+  .div-air-conditions-info,
+  .div-air-conditions-info-2 {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}

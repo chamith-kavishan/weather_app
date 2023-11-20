@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+
+    <form action="/" method="post">
+        <input type="text" class="cityInput" name="cityName" id="cityInput" placeholder="Search for cities" />
+        <input type="hidden" value="submit" onclick=""/>
+    </form>
+
+    <% if (weatherData && weatherData.cod === "404") { %>
+        <p class="weatherDev">City not found or error fetching data.</p>
+    <% } else if (weatherData && weatherData.name && weatherData.main && weatherData.main.temp) { %>
+        <div>
+            <div class="city-temp-dev">
+                <p class="cityName"><%= weatherData.name %></p>
+                <p class="temp"><%= Math.floor((weatherData.main.temp) - 273.15) %> °C</p>
+            </div>
+            <div class="weather-description-dev">
+                <img class="weather-description" src="/images/Weather Icons/<%= (weatherData.weather[0].icon) %>.png" alt="<%= (weatherData.weather[0].description) %>">
+            </div>
+        </div>
+
+        <div class="air-conditions">
+            <label class="label-air-conditions">AIR CONDITIONS</label>
+            <div class="air-conditions-grid">
+                <div class="div-air-conditions-column">
+                    <div class="div-air-conditions-info">
+                        <div class="div-air-conditions-icon">
+                            <img class="air-conditions-icon" src="/images/Air Conditions/temperature.png">
+                        </div>
+                        <div class="div-air-conditions-data">
+                            <p class="air-conditions-title">Real Feel</p>
+                            <p class="air-conditions-description"><%= Math.floor((weatherData.main.feels_like) - 273.15) %> °C</p>
+                        </div>
+                    </div>
+                    <div class="div-air-conditions-info">
+                        <div class="div-air-conditions-icon">
+                            <img class="air-conditions-icon" src="/images/Air Conditions/gauge.png">
+                        </div>
+                        <div class="div-air-conditions-data">
+                            <p class="air-conditions-title">Pressure</p>
+                            <p class="air-conditions-description"><%= (weatherData.main.pressure) %> MB</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div-air-conditions-column">
+                    <div class="div-air-conditions-info-2">
+                        <div class="div-air-conditions-icon">
+                            <img class="air-conditions-icon" src="/images/Air Conditions/wind.png">
+                        </div>
+                        <div class="div-air-conditions-data">
+                            <p class="air-conditions-title">Wind</p>
+                            <p class="air-conditions-description"><%= (weatherData.wind.speed) %> km/h</p>
+                        </div>
+                    </div>
+                    <div class="div-air-conditions-info-2">
+                        <div class="div-air-conditions-icon">
+                            <img class="air-conditions-icon" src="/images/Air Conditions/humidity.png">
+                        </div>
+                        <div class="div-air-conditions-data">
+                            <p class="air-conditions-title">Humidity</p>
+                            <p class="air-conditions-description"><%= (weatherData.main.humidity) %> %</p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% } %>
+
+</body>
+
+</html>
